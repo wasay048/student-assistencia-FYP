@@ -10,8 +10,8 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect(mongodbUrl, { useNewUrlParser: true }).then((db) => {
     console.log("Mongodb is connected");
 }).catch(error => console.log(error));
-app.get('/contact', (req, res) => {
-    res.send("It is working fine.");
+app.get('/', (req, res) => {
+    res.send("Student-Assistencia Site Under Development");
 })
 server.listen(PORT, () => {
     console.log("Port is working PORT} ");
