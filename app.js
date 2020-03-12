@@ -10,8 +10,11 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect(mongodbUrl, { useNewUrlParser: true }).then((db) => {
     console.log("Mongodb is connected");
 }).catch(error => console.log(error));
+app.engine('handlebars', exphbs({ defaultLayout: 'home' }));
+
+app.set('view engine', 'handlebars');
 app.get('/', (req, res) => {
-    res.send("Student-Assistencia Site Under Development");
+    res.render('layouts/home');
 })
 server.listen(PORT, () => {
     console.log("Port is working PORT} ");
