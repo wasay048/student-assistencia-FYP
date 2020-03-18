@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
-const router = express.Router();
+const path = require('path')
+// const router = express.Router();
 const mongoose = require('mongoose');
 const exphbs = require('express-handlebars');
 const { mongodbUrl } = require('./config/database');
@@ -10,14 +11,22 @@ const PORT = process.env.PORT || 3000;
 mongoose.connect(mongodbUrl, { useNewUrlParser: true }).then((db) => {
     console.log("Mongodb is connected");
 }).catch(error => console.log(error));
-app.engine('handlebars', exphbs({ defaultLayout: 'home' }));
 
-app.set('view engine', 'handlebars');
-app.get('/', (req, res) => {
-    res.render('layouts/home');
-})
+app.use(express.static(path.join(__dirname, 'public')))
+
+app.engine('handlebars', exphbs({ defaultLayout: 'home' }))
+
+app.set('view engine', 'handlebars')
+
+
+
+const homeRoute = require('./routes/home/homeRoute')
+app.use('/', homeRoute);
+// app.get('/', (req, res) => {
+//     res.render('layouts/home')
+// })
 server.listen(PORT, () => {
-    console.log("Port is working PORT} ");
+    console.log(`localhost working at ${PORT}`)
 })
 // app.listen(3000, () => {
 //     console.log("Listening at port 3000");
