@@ -21,7 +21,9 @@ app.set('view engine', 'handlebars')
 
 
 const homeRoute = require('./routes/home/homeRoute')
-app.use('/', homeRoute);
+const adminRoute = require('./routes/admin/adminRoute')
+app.use('/', homeRoute)
+app.use('/admin', adminRoute)
 // app.get('/', (req, res) => {
 //     res.render('layouts/home')
 // })
