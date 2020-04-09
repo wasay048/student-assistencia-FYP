@@ -8,22 +8,36 @@
                 </button>
             </div>
             <div class="modal-body">
+                <div class="registerError">
+                </div>
                 <div class="login">
-                    <form action="#" class="row">
+                    <form action="/registerStudent" method="post" class="row">
                         <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                            <input type="email" class="form-control mb-1" id="email" required name="email" value="" placeholder="someone@example.com">
+                            <span id="emailError" class="Error"></span>
                         </div>
                         <div class="col-12">
-                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                            <input type="text" class="form-control mt-2 mb-1" id="username" name="username" value="" placeholder="Username">
+                            <span id="usernameError" class="Error"></span>
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control mt-2 mb-1" id="firstName" name="firstName" placeholder="First Name">
+                            <span id="firstNameError" class="Error"></span> 
+                        </div>
+                        <div class="col-6">
+                            <input type="text" class="form-control mt-2 mb-1" id="lastName" name="lastName" placeholder="Last Name">
+                            <span id="lastNameError" class="Error"></span> 
                         </div>
                         <div class="col-12">
-                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                            <input type="password" class="form-control mt-2 mb-1" id="password" name="password" value="" placeholder="Password">
+                            <span id="passwordError" class="Error"></span> 
                         </div>
                         <div class="col-12">
-                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                            <input type="password" class="form-control mt-2 mb-1" id="confirmPassword" name="confirmPassword" value="" placeholder="Confirm Password">
+                            <span id="confirmPasswordError" class="Error"></span> 
                         </div>
                         <div class="col-12">
-                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                            <button type="submit" class="btn btn-primary" id="registerStudentButton">SIGN UP</button>
                         </div>
                     </form>
                 </div>
