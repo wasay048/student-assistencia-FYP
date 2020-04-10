@@ -3,3 +3,16 @@
     color: #fd7e14;
     font-weight: 400;
 }
+.error-message{
+    background: rgb(253, 126, 20, 0.8); 
+    color:#fff; 
+    border-radius: 1px;
+}
+.user-image{
+    /* width: 800px; */
+    height: 100vh;
+}
+/* For login page */
+#userRegistration .login-user{
+    padding-top: 10rem !important;
+}

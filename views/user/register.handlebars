@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-7">
             <div class="registerImage">
-                <img src="/home/images/register.jpg" alt="Register Image here" style="height:667px; width:800px;">
+                <img src="/home/images/register.jpg" alt="Register Image here" class="user-image" style="width: 800px;">
             </div>
         </div>
         <div class="col-md-5">
@@ -11,7 +11,7 @@
                     <h2>Sign Up</h2>
                 </div>
                 {{#each errors}}
-                    <div class="alert-danger">{{message}}</div>
+                    <div class="error-message mb-1 col-10 offset-md-1 p-1" style="">{{message}}</div>
                 {{/each}}
                 <form action="/register/student" method="post" class="row">
                     <div class="col-10 offset-md-1 mb-2 mt-1">

@@ -44,9 +44,12 @@ app.use((req, res, next) => {
 const homeRoute = require('./routes/home/homeRoute')
 const adminRoute = require('./routes/admin/adminRoute')
 const registerRoute = require('./routes/home/registerUser')
+const loginRoute = require('./routes/home/loginUser')
+
 app.use('/', homeRoute)
 app.use('/admin', adminRoute)
 app.use('/register', registerRoute)
+app.use('/login', loginRoute)
 // app.get('/', (req, res) => {
 //     res.render('layouts/home')
 // })

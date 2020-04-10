@@ -7,9 +7,11 @@ router.all('/*', (req, res, next) => {
     req.app.locals.layout = 'user'
     next()
 })
+// to call register page
 router.get('/', (req, res) => {
     res.render('user/register')
 })
+// to get data from register page along with validation
 router.post('/student', (req, res) => {
     const errors = []
     if(!req.body.email) {
@@ -59,4 +61,5 @@ router.post('/student', (req, res) => {
         })
     }
 })
+
 module.exports = router
