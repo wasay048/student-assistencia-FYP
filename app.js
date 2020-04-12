@@ -10,8 +10,9 @@ const server = http.Server(app);
 const session = require('express-session')
 const flash = require('connect-flash')
 var cookieParser = require('cookie-parser')
+const passport = require('passport')
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 80;
 mongoose.connect(mongodbUrl, { useNewUrlParser: true, useUnifiedTopology: true }).then((db) => {
     console.log("Mongodb is connected");
 }).catch(error => console.log(error));
@@ -33,11 +34,16 @@ app.use(session({
 }))
 // for flash messages
 app.use(flash())
+// Passport Session and Middlewares
+app.use(passport.initialize())
+app.use(passport.session())
+// Defining Global Variables
 app.use((req, res, next) => {
     res.locals.student = req.student || null
     res.locals.success_message = req.flash('success_message')
     res.locals.error_message = req.flash('error_message')
     res.locals.error = req.flash('error')
+    res.locals.message = req.flash('message')
     next()
   })
 // assigning routes to each page

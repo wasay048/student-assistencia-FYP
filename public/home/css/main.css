@@ -8,6 +8,11 @@
     color:#fff; 
     border-radius: 1px;
 }
+.success-message{
+    background: rgb(2, 137, 16, 0.8); 
+    color:#fff; 
+    border-radius: 1px;
+}
 .user-image{
     /* width: 800px; */
     height: 100vh;

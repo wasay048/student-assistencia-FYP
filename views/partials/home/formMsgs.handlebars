@@ -1,10 +1,20 @@
 {{#if success_message}}
-    <div class="error-message mb-1 col-10 offset-md-1 p-1">
+    <div class="success-message mb-1 col-10 offset-md-1 p-1">
         {{success_message}}
     </div>
 {{/if}}
 {{#if error_message}}
     <div class="error-message mb-1 col-10 offset-md-1 p-1">
         {{error_message}}
+    </div>
+{{/if}}
+{{#if error}}
+    <div class="error-message mb-1 col-10 offset-md-1 p-1">
+        {{error}}
+    </div>
+{{/if}}
+{{#if message}}
+    <div class="error-message mb-1 col-10 offset-md-1 p-1">
+        {{message}}
     </div>
 {{/if}}
